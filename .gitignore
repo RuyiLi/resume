@@ -1,7 +1,7 @@
+.parcel-cache/
 .cache/
 dist/
 node_modules/
-old/
 resumes/
 
 *.log

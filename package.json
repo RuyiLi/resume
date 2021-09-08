@@ -1,5 +1,5 @@
 {
-  "name": "Resume",
+  "name": "resume",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,11 +7,16 @@
     "dev": "parcel src/resume-cs.pug"
   },
   "devDependencies": {
-    "parcel": "^1.12.4",
+    "@parcel/transformer-pug": "2.0.0-rc.0",
+    "@parcel/transformer-sass": "2.0.0-rc.0",
+    "parcel": "^2.0.0-rc.0",
     "pug": "^3.0.0",
     "sass": "^1.32.0"
   },
   "dependencies": {
     "bulma": "^0.9.1"
+  },
+  "resolutions": {
+    "deasync": "0.1.16"
   }
 }
