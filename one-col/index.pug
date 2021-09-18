@@ -1,0 +1,240 @@
+title Ruyi Li - Resume
+
+//- BEGIN Stylesheets
+link(rel='stylesheet' href='one-col/main.scss')
+//- END Stylesheets
+
+template#job-info
+  link(rel='stylesheet' href='one-col/main.scss')
+  .job
+    .row
+      .col
+        strong
+          slot(name='name')
+        slot(name='company')
+      .col.text-right
+        i.fa.fa-clock-o
+        slot(name='time')
+        br
+        i.fa.fa-map-marker
+        slot(name='location')
+    slot
+
+template#project-info
+  link(rel='stylesheet' href='one-col/main.scss')
+  .project
+    .row
+      .col
+        strong
+          slot(name='name')
+      .col.text-right
+        i.fa.fa-code
+        slot(name='stack')
+    slot
+
+template#education-info
+  link(rel='stylesheet' href='one-col/main.scss')
+  .education
+    .row
+      .col
+        slot.bold(name='name')
+      .col.text-right
+        i.fa.fa-clock-o
+        slot(name='time')
+        br
+        i.fa.fa-map-marker
+        slot(name='location')
+
+script.
+  for (const template of document.querySelectorAll('template')) {
+    customElements.define(template.id,
+      class extends HTMLElement {
+        constructor() {
+          super();
+          this.attachShadow({mode: 'open'})
+            .appendChild(template.content.cloneNode(true));
+        }
+      }
+    );
+  }
+
+//- Add .debug to show red outline
+body
+  section#about
+    .row
+      .col
+        h1 Roy&nbsp;
+        h1 Li
+      .col#contact
+        .row
+          .col
+            i.fa.fa-envelope
+            p ruyi.li@uwaterloo.ca
+          .col
+            i.fa.fa-linkedin
+            a(href='https://www.linkedin.com/in/ruyi-li/') ruyi-li
+        .row
+          .col
+            i.fa.fa-github
+            a(href='https://github.com/RuyiLi') RuyiLi
+          .col
+            i.fa.fa-globe
+            a(href='https://ruyili.ca') ruyili.ca
+            
+  section#experiences
+    h2.title Work Experience
+
+    job-info
+      p(slot='name') Teaching Assistant
+      p(slot='company') University of Waterloo
+      p(slot='time') Sept 2021 &mdash; Present
+      p(slot='location') Waterloo, ON
+      ul
+        li.
+          Selected by professors for exceptional grades to mark first year students' assignments
+
+    job-info
+      p(slot='name') Software Engineering Intern
+      p(slot='company') Tribe Community Platform
+      p(slot='time') May 2021 &mdash; Aug 2021
+      p(slot='location') Toronto, ON
+      ul
+        li.
+          Developed key features for the release of Tribe V2 in #[strong Node.js] using 
+          #[strong NestJS microservices] and #[strong GraphQL]
+        li.
+          Implemented APIs allowing users to create Tribe Apps to extend a community's functionality
+        li.
+          Managed and led the development of the Zapier app to deliver the most highly-requested feature from V1 
+          to thousands of early-access communities and key stakeholders
+        //- li.
+        //-   Worked with #[strong ElasticSearch] to address search issues and improve accuracy of results
+        //- li.
+        //-   Worked closely with fellow engineers in an agile environment and communicated with
+        //-   product design and customer success teams to ensure product quality
+        li.
+          Adopted agile methodology working in feature-oriented developer/product teams with sprint planning and daily standups 
+          
+    //- job-info
+    //-   p(slot='name') Technology Officer
+    //-   p(slot='company') AlumNav Inc.
+    //-   p(slot='time') Jun 2020 &mdash; Present
+    //-   p(slot='location') #[a(target='_blank' href='https://alumnav.com/') www.alumnav.com]
+    //-   ul
+    //-     li.
+    //-       Co-founded platform providing mentorship for over 5,000 high school students
+    //-     li.
+    //-       Developed website using #[strong Pug/JS/SCSS], set up CI/CD with GitHub Actions and Netlify
+
+    job-info
+      p(slot='name') Software Engineer
+      p(slot='company') WZMH Architects
+      p(slot='time') Mar 2020 &mdash; Jul 2020
+      p(slot='location') Toronto, ON
+      ul
+        li.
+          Implemented backend in #[strong Node.js] to allow a #[strong React Native] 
+          app to interface with devices connected to an Arduino microcontroller
+          through a #[strong REST API] and #[strong Websockets] for the BlackBox5 IoT project
+        li.
+          Stored data in a #[strong PostgreSQL] database and deployed project using #[strong Docker]
+
+    //- job-info
+    //-   p(slot='name') Web Developer
+    //-   p(slot='company') VolunteeringPeel
+    //-   p(slot='time') Nov 2019 &mdash; Jun 2020
+    //-   p(slot='location') Missisauga, ON
+    //-   ul
+    //-       li.
+    //-         Maintained website to help students find/apply for volunteer positions
+    //-       li.
+    //-         Created tools to improve efficiency of management processes and technological support
+
+  section#projects
+    h2.title Projects
+
+    project-info
+      a(slot='name' href='https://intabs.io/' target='_blank') intabs.io
+      p(slot='stack') JavaScript (Next.js, React), Java (Spring)
+      ul
+        li.
+          Built a platform with over 200 users for interns to find, share, and track salaries, reviews, and application timelines
+          
+
+    project-info
+      a(slot='name' href='https://devpost.com/software/blockoj-qnpcb7' target='_blank') BlockOJ
+      p(slot='stack') Node.js (Express), C, PostgreSQL, AWS EC2
+      ul
+        li.
+          Winning project created for the Hack the 6ix hackathon introducing youth to coding and problem-solving
+          by presenting programming questions using a friendly and intuitive block-based drag-and-drop coding system
+
+    project-info
+      p(slot='name') TriviaMaster
+      p(slot='stack') Node.js (discord.js), Python (Django), Vue, PostgreSQL
+      ul
+        li.
+          Application allowing users to add questions and play trivia games with other users
+          through a Discord bot, website, or mobile app frontend with over 300 000 users
+        li.
+          REST API built in Python, using SQLAlchemy to store user and trivia data in PostgreSQL
+
+    project-info
+      p(slot='name') Craftrivia
+      p(slot='stack') C#, Unity
+      ul
+        li.
+          Mobile game developed in C# with the Unity game engine with
+          over 130 000 installs on the Android Play Store
+
+  section#skills
+    h2.title Skills
+    .row
+      .col
+        p.
+          #[strong Languages] &mdash;
+          JavaScript/TypeScript, Python, C++, Bash
+        p.
+          #[strong Server/Web] &mdash;
+          Node.js, Django/Flask, NextJS/React, Vue, REST, GraphQL, NestJS
+      .col
+        p.
+          #[strong Tools] &mdash;
+          Docker, Git, Jest, Office, Jira
+        p.
+          #[strong Database] &mdash;
+          PostgreSQL, MongoDB, Redis, SQLAlchemy, TypeORM, Kafka
+
+  section#awards
+    h2.title Awards
+
+    div
+      p.time 2020
+      p.
+        #[strong Semifinalist] &mdash;
+        TD Cybersecurity Live Case Competition
+
+    div
+      p.time 2020
+      p.
+        #[strong Mentor's Choice] &mdash;
+        Hack the 6ix
+
+    div
+      p.time 2020
+      p.
+        #[strong Top 65 in Canada] &mdash;
+        Canadian Computing Competition Senior Division
+
+  section#education
+    h2.title Education
+
+    education-info
+      p(slot='name') Bachelor of Computer Science and Bachelor of Business Administration Double Degree
+      p(slot='time') Sept 2020 &mdash; Present
+      p(slot='location') University of Waterloo &amp; Wilfrid Laurier University
+  
+    education-info
+      p(slot='name') SHAD Valley
+      p(slot='time') Sept 2018
+      p(slot='location') Lakehead University

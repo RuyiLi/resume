@@ -1,0 +1,162 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+$page-width: 8.5in;
+$page-height: 11in;
+
+$family-sans-serif: "Helvetica Now Display", "IBM Plex Sans", sans-serif;
+$family-monospace: "Cascadia Code";
+
+$margin: 0.7rem;
+$theme: #af3a3a;
+
+@page {
+  size: letter portrait;
+  margin: 0;
+}
+
+body {
+  width: $page-width;
+  height: $page-height;
+  padding: 0 2rem;
+  margin: 0;
+
+  font-family: $family-sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit !important;
+}
+
+code {
+  font-family: $family-monospace;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .col {
+    flex: 1;
+  }
+}
+
+.debug {
+  border: 1px solid red;
+}
+
+i,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+i {
+  width: 16px;
+  margin-right: 10px;
+  display: inline-block;
+
+  + * {
+    display: inline-block;
+  }
+}
+
+a {
+  color: black;
+}
+
+section {
+  margin-top: $margin;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid black;
+  margin-bottom: $margin;
+}
+
+ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.4rem;
+
+  li {
+    list-style: disc;
+
+    // text-indent: -1.25rem;
+    // &::before {
+    //   font: normal normal normal 14px/1 FontAwesome;
+    //   content: "\f061";
+    //   content: "\f178";
+    //   margin-right: 0.4rem;
+    // }
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+// Section-specific styles
+
+#about {
+  h1 {
+    display: inline-block;
+
+    &:first-child {
+      color: $theme;
+    }
+  }
+}
+
+.job,
+.education,
+.project {
+  margin-top: $margin;
+
+  .row {
+    justify-content: space-between;
+  }
+}
+
+#awards {
+  .time {
+    margin: 0 1rem;
+  }
+
+  p {
+    display: inline-block;
+  }
+}
+
+slot[name="stack"],
+slot[name="time"] {
+  color: $theme;
+  font-weight: 500;
+}

@@ -1,9 +1,4 @@
-.parcel-cache/
-.cache/
-.idea/
-
-dist/
 node_modules/
-resumes/
+output/
 
 *.log

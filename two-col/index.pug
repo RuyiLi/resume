@@ -2,8 +2,7 @@ title Ruyi Li - Resume
 
 //- BEGIN Stylesheets
 link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-link(rel='stylesheet' href='normalize.css')
-link(rel='stylesheet' href='style.scss')
+link(rel='stylesheet' href='two-col/main.scss')
 //- END Stylesheets
 
 //- BEGIN Resume Content
@@ -28,9 +27,6 @@ section.columns.is-centered.has-text-centered.is-family-monospace.pb-1#contact
     a(target='_blank' href='mailto:ruyi.li@uwaterloo.ca')
       i.fa.fa-envelope
       p ruyi.li@uwaterloo.ca
-  //- div.column.is-narrow
-  //-   i.fa.fa-phone
-  //-   p 647.804.0140
 
 section.columns#details
   div.column#long-description
@@ -38,24 +34,36 @@ section.columns#details
       h1 Work Experience
 
       div.job
+        h2 Teaching Assistant
+        h2.company University of Waterloo
+        em.location Waterloo, ON
+        p.timeline Sept 2021 &mdash; Present
+        ul.details
+          li.
+            Selected by professors for exceptional grades to mark first year students' assignments
+
+      div.job
         h2 Software Engineering Intern
         h2.company Tribe Community Platform
         em.location Toronto, ON
         //- em.location #[a(target='_blank' href='https://tribe.so/') www.tribe.so]
-        p.timeline May 2021 &mdash; Present
+        p.timeline May 2021 &mdash; Aug 2021
         ul.details
           li.
             Developed key features for the release of Tribe V2 in #[strong Node.js] using the #[strong Nest framework]
           li.
             Implemented APIs allowing users to create Apps to extend a community's functionality
           li.
-            Lead the development of the Zapier app to deliver a highly-requested feature to early-access 
-            communities and key stakeholders
+            Managed and lead the development of the Zapier app to deliver the most highly-requested feature from V1 
+            to early-access communities and key stakeholders
           //- li.
           //-   Worked with #[strong ElasticSearch] to address search issues and improve accuracy of results
+          //- li.
+          //-   Worked closely with fellow engineers in an agile environment and communicated with
+          //-   product design and customer success teams to ensure product quality
           li.
-            Worked closely with fellow engineers in an agile environment and communicated with
-            product design and customer success teams to ensure product quality
+            Improved communication skills through pair programming sessions and feature-oriented 
+            developer/product design teams in an agile environment
 
       div.job
         h2 Chief Technology Officer
@@ -92,13 +100,13 @@ section.columns#details
           li Maintained website to help students find/apply for volunteer positions
           li Created tools to improve efficiency of management processes and technological support
 
-      div.job
-        h2 JavaScript and Python Teacher
-        h2.company Triway Education
-        em.location Richmond Hill, ON
-        p.timeline Jul 2019 &mdash; Mar 2020
-        ul.details
-          li Prepared lesson plans and assignments for students to practice and hone their skills
+      //- div.job
+      //-   h2 JavaScript and Python Teacher
+      //-   h2.company Triway Education
+      //-   em.location Richmond Hill, ON
+      //-   p.timeline Jul 2019 &mdash; Mar 2020
+      //-   ul.details
+      //-     li Prepared lesson plans and assignments for students to practice and hone their skills
 
       //- div.job
       //-   h2 Teaching Assistant
@@ -194,7 +202,7 @@ section.columns#details
       
       h2 Bachelor of Computer Science and Business Administration Double Degree
       p.timeline 2020 &mdash; Present
-      p.details University of Waterloo &amp; Wilfrid Laurier University (4.0/4.0 GPA)
+      p.details University of Waterloo &amp; Wilfrid Laurier University
 
       h2 Machine Learning and AI Foundations: Recommendations
       p.timeline 2019
@@ -215,14 +223,14 @@ section.columns#details
       p.timeline 2020
       p.details MasseyHacks VI
 
-      h2 Group 3 (Top 65 in Canada)
+      h2 Top 65 in Canada
       p.timeline 2020
       p.details Canadian Computing Competition Senior Division
 
-      h2 Most Creative Hack
-      p.timeline 2018
-      p.details HackIR
+      //- h2 Most Creative Hack
+      //- p.timeline 2018
+      //- p.details HackIR
 
-      h2 SHAD Ambassador
-      p.timeline 2018
-      p.details Erindale Secondary School
+      //- h2 SHAD Ambassador
+      //- p.timeline 2018
+      //- p.details Erindale Secondary School
