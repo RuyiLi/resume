@@ -6,7 +6,7 @@ $page-height: 11in;
 $family-sans-serif: "Helvetica Now Display", "IBM Plex Sans", sans-serif;
 $family-monospace: "Cascadia Code";
 
-$margin: 0.7rem;
+$margin: 0.8rem;
 $theme: #af3a3a;
 
 @page {
@@ -17,7 +17,7 @@ $theme: #af3a3a;
 body {
   width: $page-width;
   height: $page-height;
-  padding: 0 2rem;
+  padding: 0 4rem;
   margin: 0;
 
   font-family: $family-sans-serif;
@@ -77,6 +77,8 @@ i {
 
 a {
   color: black;
+  text-decoration-color: transparentize($theme, 0.5);
+  text-decoration-thickness: 1px;
 }
 
 section {
